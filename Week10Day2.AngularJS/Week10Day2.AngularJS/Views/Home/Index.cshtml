@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Searcher";
+}
+
+
+<div  ng-app="classmatesApp">
+    <div ng-cloak ng-controller="classmatesController">
+        Search: <input type="text" ng-model="searchText" />
+        {{ searchText }}
+
+        <h4>Classmates & Teacher</h4>
+        <table>
+            <tr ng-repeat="class in classmates | filter:searchText">
+                <td>{{ class }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+@section scripts{
+    <script>
+        var app = angular.module('classmatesApp', []);
+
+        app.controller('classmatesController', function ($scope, classmatesFactory) {
+
+            function init() {
+                classmatesFactory.getClassmates().then(function (results) {
+                    $scope.classmates = results;
+                });
+            }
+
+            init();
+        });
+
+        app.factory('classmatesFactory', function ($http) {
+            var factory = {};
+            factory.getClassmates = function (scope) {
+                //return ['Justin Wyatt', 'Josh Hill', 'Cason Barnhill', 'Professor Pollock'];
+                return $http.get('/home/classmates').then(
+                             function (results) {
+                                 console.log(results);
+                                 return results.data;
+                             }, function () {
+                                 return ['Failure'];
+                             });
+            };
+            return factory;
+        });
+
+
+    </script>
+}
+
