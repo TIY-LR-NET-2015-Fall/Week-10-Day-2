@@ -9,6 +9,11 @@ Angular JS
 4. List your classmates teachers name on the page using a service/factory controller. 
 5. Allow the list in #4 to be filter using a input from a textbox.
 
+
+# Turning in
+
+1. Clone this repo and submit a pull request with your code changes.
+
 # Notes [Angular JS in 60 minutes](https://www.youtube.com/watch?v=i9MHigUZKEM)
 
 
