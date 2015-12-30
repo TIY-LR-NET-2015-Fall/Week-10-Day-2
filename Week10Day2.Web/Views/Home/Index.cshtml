@@ -11,8 +11,8 @@
     <h3>People:</h3>
     <table>
         <tr ng-repeat="class in classes | filter:searchText | 
-            orderBy: 'name'">
-            <td>{{class.name}}</td>
+            orderBy: 'name' | orderBy: 'classification'">
+            <td>{{class.name}} - {{class.classification}}</td>
             <td></td>
         </tr>
     </table>
@@ -25,13 +25,14 @@
 
         app.controller('ClassesController', function ($scope) {
             $scope.classes = [
-            { "id": 1, "name":  "Daniel Pollock", "class": "Teacher" },
-            { "id": 2, "name": "Cason Barnhill", "class": "Student" },
-            { "id": 3, "name": "Josh Hill", "class": "Student" },
-            { "id": 4, "name": "Justin Wyatt", "class": "Student" },
-            { "id": 5, "name": "Baxley Aldworth", "class": "Student" },
-            { "id": 6, "name": "Cason Boooo", "class": "Student" },
-            { "id": 6, "name": "Cason Adams", "class": "Student" }
+            { "id": 1, "name": "Daniel Pollock", "classification": "Teacher" },
+            { "id": 2, "name": "Cason Barnhill", "classification": "Student" },
+            { "id": 3, "name": "Josh Hill", "classification": "Student" },
+            { "id": 4, "name": "Justin Wyatt", "classification": "Student" },
+            { "id": 5, "name": "Baxley Aldworth", "classification": "Student" },
+            { "id": 6, "name": "Cason Boooo", "classification": "Student" },
+            { "id": 6, "name": "Cason Adams", "classification": "Student" },
+            { "id": 7, "name": "Daniel Adams", "classification": "Teacher" }
 
             ];
         });
