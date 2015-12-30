@@ -5,8 +5,8 @@
 
 
 
-
-<div ng-app="FactoriesController">
+<h1>what what</h1>
+<div ng-controller="FactoriesController">
     <div>
 
     </div>
@@ -22,18 +22,18 @@
 
 </div>
 @section scripts{
-<script>
-    var app = angular.module('factoriesApp', []);
-    app.controller('FactoriesController', function ($scope) {
-        $scope.factories = [
-            { "id": 1, "name": "Josh", },
-            { "id": 2, "name": "Bob", },
-            { "id": 3, "name": "Cason", },
-            { "id": 4, "name": "Baxley", },
-            { "id": 5, "name": "Justin", }
-        ];
-    });
-</script>
+    <script>
+        var app = angular.module('factoriesApp', []);
+        app.controller('FactoriesController', function ($scope) {
+            $scope.factories = [
+                { "id": 1, "name": "Josh", },
+                { "id": 2, "name": "Daniel", },
+                { "id": 3, "name": "Cason", },
+                { "id": 4, "name": "Baxley", },
+                { "id": 5, "name": "Justin", }
+            ];
+        });
+    </script>
 }
 
 
