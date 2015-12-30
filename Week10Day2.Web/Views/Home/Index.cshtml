@@ -12,7 +12,7 @@
     <table>
         <tr ng-repeat="class in classes | filter:searchText | 
             orderBy: 'name' | orderBy: 'classification'">
-            <td>{{class.name}} - {{class.classification}}</td>
+            <td>{{class.name}} - {{class.classification | uppercase}}</td>
             <td></td>
         </tr>
     </table>
