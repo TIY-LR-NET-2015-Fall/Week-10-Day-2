@@ -10,7 +10,8 @@
     <br />
     <h3>People:</h3>
     <table>
-        <tr ng-repeat="class in classes | filter:searchText">
+        <tr ng-repeat="class in classes | filter:searchText | 
+            orderBy: 'name'">
             <td>{{class.name}}</td>
             <td></td>
         </tr>
@@ -24,11 +25,14 @@
 
         app.controller('ClassesController', function ($scope) {
             $scope.classes = [
-            { "id": 1, "name": "Daniel Pollock", "class": "Teacher" },
+            { "id": 1, "name":  "Daniel Pollock", "class": "Teacher" },
             { "id": 2, "name": "Cason Barnhill", "class": "Student" },
             { "id": 3, "name": "Josh Hill", "class": "Student" },
             { "id": 4, "name": "Justin Wyatt", "class": "Student" },
-            { "id": 5, "name": "Baxley Aldworth", "class": "Student" }
+            { "id": 5, "name": "Baxley Aldworth", "class": "Student" },
+            { "id": 6, "name": "Cason Boooo", "class": "Student" },
+            { "id": 6, "name": "Cason Adams", "class": "Student" }
+
             ];
         });
     </script>
